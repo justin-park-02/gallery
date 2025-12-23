@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>상품 상세</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Gallery Shop</h1>
+</header>
+
+<main class="detail" id="detail"></main>
+
+<script src="products.js"></script>
+<script>
+const params = new URLSearchParams(location.search);
+const id = parseInt(params.get("id"));
+
+const product = products.find(p => p.id === id);
+const container = document.getElementById("detail");
+
+if (product) {
+  container.innerHTML = `
+    <div class="detail-image">
+      <img src="${product.img}">
+    </div>
+
+    <div class="detail-info">
+      <h2>${product.name}</h2>
+      <p class="price">${product.price}</p>
+
+      <ul>
+        <li>색상: ${product.colors}</li>
+        <li>사이즈: ${product.sizes}</li>
+        <li>출처: ${product.source}</li>
+      </ul>
+
+      <a class="taobao-btn" href="${product.taobao}" target="_blank">
+        원본 상품 페이지 보기
+      </a>
+    </div>
+  `;
+} else {
+  container.innerHTML = "<p>상품을 찾을 수 없습니다.</p>";
+}
+</script>
+
+</body>
+</html>
