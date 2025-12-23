@@ -4,7 +4,7 @@ const products = [
     name: "Test Page",
     price: "₩99,999",
     img: "images/Test.jpg",
-    colors: "핑크",
+    colors: "블랙 / 화이트",
     sizes: "M / L / XL"
   },
 {
@@ -26,5 +26,6 @@ const products = [
     taobao: "https://item.taobao.com/item.htm?id=723374657366&mi_id=0000ttwTom6EIkfMA6wWuH5O9RlAuhgw_5oQshlwAi7xIok&spm=a21xtw.29178619.0.0"
   }
 ];
+
 
 console.log("products.js 정상 로드", products);
